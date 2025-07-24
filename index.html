@@ -32,7 +32,47 @@ animation: brillo 2s infinite;
 50% { border-color: orange; }
 100% { border-color: gold; }
 }
+.abejitas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
 
+.abeja {
+  position: absolute;
+  font-size: 28px;
+  animation: volar 8s linear infinite;
+}
+
+.abeja:nth-child(1) {
+  top: 20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.abeja:nth-child(2) {
+  top: 50%;
+  left: -15%;
+  animation-delay: 2s;
+}
+
+.abeja:nth-child(3) {
+  top: 80%;
+  left: -20%;
+  animation-delay: 4s;
+}
+
+@keyframes volar {
+  0% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(25vw) rotate(10deg); }
+  50% { transform: translateX(50vw) rotate(-10deg); }
+  75% { transform: translateX(75vw) rotate(10deg); }
+  100% { transform: translateX(100vw) rotate(0deg); }
+}
 .carta {
 background-color: #fff;
 border-radius: 12px;
@@ -185,7 +225,11 @@ margin-bottom: 10px;
     </p>
     <p class="firma">Con todo mi cariño,<br>🧡 Ruben, tu pandita</p>
   </div>
-
+<div class="abejitas">
+  <div class="abeja">🐝</div>
+  <div class="abeja">🐝</div>
+  <div class="abeja">🐝</div>
+</div>
   <!-- Corazones flotando -->
   <script>
     function mostrarCarta() {
